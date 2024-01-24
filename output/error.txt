@@ -1,0 +1,59 @@
+Incompatible sql script found in Insert-Example1.sql:
+
+
+--WRONG CustomerName LIKE '%Robin'
+INSERT INTO Customers (CustomerName, City, Country) --Test comment 1
+VALUES ('Cardinal', 'Stavanger', 'Norway')
+
+ERROR: Could not find where statement in input script.
+
+Traceback (most recent call last):
+  File "c:\Users\Alex Evans\Documents\Python Scripts\sql-converter\src\main.py", line 77, in <module>
+    raise IncompatibleSqlScript
+IncompatibleSqlScript
+
+---------------------------
+
+Incompatible sql script found in Insert-Example1.sql:
+ -- Another test comment
+
+SELECT * FROM TABLE1
+
+ERROR: Invalid script type
+
+Traceback (most recent call last):
+  File "c:\Users\Alex Evans\Documents\Python Scripts\sql-converter\src\main.py", line 77, in <module>
+    raise IncompatibleSqlScript
+IncompatibleSqlScript
+
+---------------------------
+
+Incompatible sql script found in Insert-Example2.sql:
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway'),
+('Greasy Burger', 'Per Olsen', 'Gateveien 15', 'Sandnes', '4306', 'Norway'),
+('Tasty Tee', 'Finn Egan', 'Streetroad 19B', 'Liverpool', 'L1 0AA', 'UK')
+
+ERROR: Could not find where statement in input script.
+
+Traceback (most recent call last):
+  File "c:\Users\Alex Evans\Documents\Python Scripts\sql-converter\src\main.py", line 77, in <module>
+    raise IncompatibleSqlScript
+IncompatibleSqlScript
+
+---------------------------
+
+Incompatible sql script found in Update-Example2.sql:
+UPDATE Customers
+SET ContactName = 'Juan'
+
+ERROR: Could not find where statement in input script.
+
+Traceback (most recent call last):
+  File "c:\Users\Alex Evans\Documents\Python Scripts\sql-converter\src\main.py", line 77, in <module>
+    raise IncompatibleSqlScript
+IncompatibleSqlScript
+
+---------------------------
+
